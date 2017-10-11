@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{11ec1b31-2c51-4748-abaf-2f4d8c758f0e}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Condor</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\CondorAPI.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\CondorHandlerThread.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\HttpClientFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\INotification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\APICommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Auth\AuthAPICommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Auth\Commands\GetTeamCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Auth\Commands\LoginCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Auth\Commands\LogoutCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Auth\Commands\RestoreLoginCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Member\Commands\DeleteMemberCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Member\Commands\DemoteMemberCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Member\MemberAPICommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Member\Commands\AddMemberCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Permission\Commands\CanCreateProjectsCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Permission\Commands\CanDeleteProjectCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Permission\Commands\CanManageMembersCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Permission\Commands\CanManageTasksCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Permission\Commands\CanModifyPermissionsCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Permission\Commands\GetPermTableCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Permission\Commands\ToggleCreatePermissionCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Permission\Commands\ToggleIsModCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Permission\PermissionAPICommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Project\Commands\AssignTaskCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Project\Commands\CreateCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Project\Commands\CreateTaskCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Project\Commands\DeassignTaskCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Project\Commands\DeleteCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Project\Commands\DeleteTaskCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Project\Commands\GetAllProjectsCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Member\Commands\PromoteMemberCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Project\Commands\SetTaskDescCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Project\Commands\SetTaskDueCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Project\Commands\SetTaskStatusCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Project\ProjectAPICommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Objects\Member.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Objects\Project.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Objects\Projects.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Objects\Role.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Objects\Task.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Objects\TaskStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ClickableStackLayout.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CredsPrompt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainPageMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ManageMemberPrompt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ManageMyTaskPrompt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ManagePermsPrompt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ManageTaskPrompt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProjectPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Prompt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TextPrompt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MemberPermsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Objects\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Resources\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MainPageMaster.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ProjectPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MemberPermsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

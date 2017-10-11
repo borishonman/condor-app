@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+    This file is part of Condor.
+    Condor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Condor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Condor.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="223">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="222">
+            <objects>
+                <viewController id="223" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="220"/>
+                        <viewControllerLayoutGuide type="bottom" id="221"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="224">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.66666666666666663" green="0.29019607843137257" blue="0.00784313725490196" alpha="1"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="229" translatesAutoresizingMaskIntoConstraints="NO" image="launchscreen.png">
+                                <rect key="frame" x="142" y="0.0" width="315" height="600"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="903"/>
+                                        <exclude reference="904"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="903"/>
+                                        <include reference="904"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="901"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="901"/>
+                            </mask>
+                        </variation>
+                        <constraints>
+                            <constraint id="1374" firstItem="224" firstAttribute="trailingMargin" secondItem="229" secondAttribute="trailing" constant="123"/>
+                            <constraint id="1375" firstItem="220" firstAttribute="bottom" secondItem="229" secondAttribute="top" constant="20"/>
+                            <constraint id="1376" firstItem="229" firstAttribute="leading" secondItem="224" secondAttribute="leadingMargin" constant="122"/>
+                            <constraint id="1377" firstItem="229" firstAttribute="bottom" secondItem="221" secondAttribute="top"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="225" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-225" y="-262"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="profile_generic.png" width="95" height="95"/>
+        <image name="slideout.png" width="14" height="15"/>
+        <image name="tab_about.png" width="32" height="30"/>
+        <image name="tab_feed.png" width="32" height="30"/>
+        <image name="launchscreen.png" width="1294" height="1786"/>
+    </resources>
+</document>
