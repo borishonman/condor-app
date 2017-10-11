@@ -30,11 +30,11 @@
                         <ViewCell>
                             <StackLayout Orientation="Vertical" Padding="10" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                    <Label x:Name="txt_member_name" FontSize="18" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding ID}" HorizontalOptions="StartAndExpand" />
-                                    <Label x:Name="txt_member_assigned" VerticalTextAlignment="Center" Text="{Binding NumAssignedTasks}" />
-                                    <Label Text=" tasks assigned" VerticalTextAlignment="Center"/>
+                                    <Label x:Name="txt_member_name" FontSize="14" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding ID}" HorizontalOptions="StartAndExpand" />
+                                    <Label x:Name="txt_member_assigned" FontSize="10" VerticalTextAlignment="Center" Text="{Binding NumAssignedTasks}" />
+                                    <Label Text=" tasks assigned" FontSize="10" VerticalTextAlignment="Center"/>
                                 </StackLayout>
-                                <Label x:Name="txt_member_role" Text="{Binding Role.str}" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand" />
+                                <Label x:Name="txt_member_role" FontSize="10" Text="{Binding Role.str}" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -48,12 +48,12 @@
                             <StackLayout Padding="10">
                                 <StackLayout Orientation="Horizontal">
                                     <StackLayout HorizontalOptions="FillAndExpand">
-                                        <Label x:Name="txt_task_name" Text="{Binding Name}" TextColor="Black" FontSize="18"/>
-                                        <Label x:Name="txt_task_due" Text="{Binding DueString}"/>
-                                        <Label x:Name="txt_task_desc" Text="{Binding Description}" />
+                                        <Label x:Name="txt_task_name" Text="{Binding Name}" TextColor="Black" FontSize="14"/>
+                                        <Label x:Name="txt_task_due" Text="{Binding DueString}" FontSize="10"/>
+                                        <Label x:Name="txt_task_desc" Text="{Binding Description}" FontSize="10"/>
                                     </StackLayout>
                                     <StackLayout>
-                                        <Label x:Name="txt_task_status" Text="{Binding Status.str}" />
+                                        <Label x:Name="txt_task_status" Text="{Binding Status.str}" FontSize="10"/>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
@@ -69,13 +69,13 @@
                             <StackLayout Padding="10">
                                 <StackLayout Orientation="Horizontal">
                                     <StackLayout HorizontalOptions="FillAndExpand">
-                                        <Label x:Name="txt_task_name" Text="{Binding Name}" TextColor="Black" FontSize="18"/>
-                                        <Label x:Name="txt_task_due" Text="{Binding DueString}"/>
-                                        <Label x:Name="txt_task_desc" Text="{Binding Description}" />
+                                        <Label x:Name="txt_task_name" Text="{Binding Name}" TextColor="Black" FontSize="14"/>
+                                        <Label x:Name="txt_task_due" Text="{Binding DueString}" FontSize="10"/>
+                                        <Label x:Name="txt_task_desc" Text="{Binding Description}" FontSize="10"/>
                                     </StackLayout>
                                     <StackLayout>
-                                        <Label x:Name="txt_task_assigned" Text="{Binding AssignedID}" />
-                                        <Label x:Name="txt_task_status" Text="{Binding Status.str}" />
+                                        <Label x:Name="txt_task_assigned" Text="{Binding AssignedID}" FontSize="10"/>
+                                        <Label x:Name="txt_task_status" Text="{Binding Status.str}" FontSize="10"/>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>

@@ -28,7 +28,7 @@ namespace Condor.ViewModels
         public ClickableStackLayout()
         {
             m_map = new Dictionary<EventHandler, TapGestureRecognizer>();
-            m_label = new Label();
+            m_label = new Label() { FontSize=12 };
             this.Enabled = true;
             this.Children.Add(m_label);
         }

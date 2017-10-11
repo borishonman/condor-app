@@ -26,7 +26,7 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
-                <RowDefinition Height="80"/>
+                <RowDefinition Height="20"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
@@ -46,24 +46,24 @@
                 TextColor="White"
                 FontSize="24" />
         </Grid>
-        <Label Text="User" Margin="20, 10, 0, 0" FontSize="Small" TextColor="{DynamicResource Accent}" />
+        <Label Text="User" Margin="10, 10, 0, 0" FontSize="Small" TextColor="{DynamicResource Accent}" />
         <ContentView BackgroundColor="{DynamicResource Accent}" HeightRequest="10" HorizontalOptions="FillAndExpand" />
-        <local:ClickableStackLayout x:Name="mnu_login" Padding="20" Text="Login" />
-        <local:ClickableStackLayout x:Name="mnu_addr" Padding="20" Text="Server Address" />
+        <local:ClickableStackLayout x:Name="mnu_login" Padding="10" Text="Login" />
+        <local:ClickableStackLayout x:Name="mnu_addr" Padding="10" Text="Server Address" />
         <StackLayout x:Name="mnu_admin_title" IsVisible="False">
-            <Label Text="Admin" Margin="20, 10, 0, 0" FontSize="Small" TextColor="{DynamicResource Accent}" />
+            <Label Text="Admin" Margin="10, 10, 0, 0" FontSize="Small" TextColor="{DynamicResource Accent}" />
             <ContentView BackgroundColor="{DynamicResource Accent}" HeightRequest="10" HorizontalOptions="FillAndExpand" />
         </StackLayout>
-        <local:ClickableStackLayout x:Name="mnu_perms_table" Padding="20" IsVisible="False" Text="Member Permissions" />
-        <local:ClickableStackLayout x:Name="mnu_create_project" Padding="20" IsVisible="False" Text="Create Project" />
-        <Label Text="Projects" Margin="20, 10, 0, 0" FontSize="Small" TextColor="{DynamicResource Accent}"/>
+        <local:ClickableStackLayout x:Name="mnu_perms_table" Padding="10" IsVisible="False" Text="Member Permissions" />
+        <local:ClickableStackLayout x:Name="mnu_create_project" Padding="10" IsVisible="False" Text="Create Project" />
+        <Label Text="Projects" Margin="10, 10, 0, 0" FontSize="Small" TextColor="{DynamicResource Accent}"/>
         <ContentView BackgroundColor="{DynamicResource Accent}" HeightRequest="10" HorizontalOptions="FillAndExpand" />
         <ListView x:Name="lst_main_menu" HasUnevenRows="True" VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="20">
-                            <Label Text="{Binding Title}" FontSize="Medium" TextColor="Black"/>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Title}" FontSize="12" TextColor="Black"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

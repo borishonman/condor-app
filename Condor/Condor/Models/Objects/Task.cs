@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json.Linq;
+using System.Globalization;
 
 namespace Condor.Models
 {
@@ -44,7 +45,7 @@ namespace Condor.Models
         {
             m_name = (string)resp.GetValue("name");
             m_desc = (string)resp.GetValue("description");
-            m_due = DateTime.Parse((string)resp.GetValue("due"));
+            m_due = DateTime.Parse((string)resp.GetValue("due"), new CultureInfo("en-US"));
             m_status = TaskStatus.FromString((string)resp.GetValue("status"));
 
             string assignedName = (string)resp.GetValue("assigned");
