@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Condor.Helpers
 {
@@ -22,12 +23,7 @@ namespace Condor.Helpers
     {
         public static IConfig GetInstance()
         {
-#if __IOS__
-            return new Condor.iOS.Config();
-#endif
-#if __ANDROID__
-            return new Condor.Droid.Config();
-#endif
+            return DependencyService.Get<IConfig>();
         }
     }
     interface IConfig

@@ -74,7 +74,7 @@ namespace Condor.Helpers
                 try
                 {
                     httpClient = HttpClientFactory.Create(new Uri(m_addr));
-                    httpClient.Timeout = new System.TimeSpan(0, 0, 1);
+                    httpClient.Timeout = new System.TimeSpan(0, 0, 5);
                     //create the request object
                     HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, curCmd.APIEndpoint.str);
                     request.Headers.Add("Accept", "application/json");

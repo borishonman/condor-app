@@ -20,6 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\IConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\HttpClientFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\INotification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Updater.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\APICommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Auth\AuthAPICommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\API\CommandModels\Auth\Commands\GetTeamCommand.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MemberPermsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UpdatePrompt.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Models\Objects\" />

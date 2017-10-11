@@ -20,22 +20,24 @@ using System.Text;
 using Foundation;
 using UIKit;
 
+using Condor.iOS;
 using Condor.Helpers;
 
+[assembly: Xamarin.Forms.Dependency(typeof(ConfigiOS))]
 namespace Condor.iOS
 {
-    class Config : IConfig
+    class ConfigiOS : IConfig
     {
         private NSUserDefaults m_defaults;
 
-        public Config()
+        public ConfigiOS()
         {
             m_defaults = NSUserDefaults.StandardUserDefaults;
         }
 
         public IConfig GetConfig()
         {
-            return new Config();
+            return new ConfigiOS();
         }
 
         public string Address

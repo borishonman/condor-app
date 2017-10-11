@@ -13,6 +13,7 @@
  */
 
 using Condor.Views;
+using Condor.Helpers;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

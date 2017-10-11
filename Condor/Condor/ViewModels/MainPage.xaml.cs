@@ -229,6 +229,21 @@ namespace Condor.Views
 
             //display the home page
             DisplayHome();
+
+            //check for updates
+            string addr;
+            string version;
+            string description;
+            if (Updater.CheckForUpdates(out addr, out version, out description))
+            {
+                UpdatePrompt p = new UpdatePrompt() { Text = description,Version=version };
+                p.OnPromptSaved += new Prompt.PromptClosedEventListener(() =>
+                {
+                    Device.OpenUri(new Uri(addr));
+                });
+                p.Show(this);
+            }
+
             //try restoring the login, only if a token is set
             if (m_config.Token == "")
                 return;

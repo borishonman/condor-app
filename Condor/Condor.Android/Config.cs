@@ -25,17 +25,19 @@ using Android.Views;
 using Android.Widget;
 using Android;
 
+using Condor.Droid;
 using Condor.Helpers;
 using Android.Content.Res;
 
+[assembly: Xamarin.Forms.Dependency(typeof(ConfigAndroid))]
 namespace Condor.Droid
 {
-    class Config : IConfig
+    class ConfigAndroid : IConfig
     {
         private ISharedPreferences m_prefs;
         private ISharedPreferencesEditor m_prefsEditor;
 
-        public Config()
+        public ConfigAndroid()
         {
             Context ctx = Android.App.Application.Context;
             m_prefs = ctx.GetSharedPreferences(ctx.Resources.GetString(Resource.String.app_config_file), FileCreationMode.Private);
