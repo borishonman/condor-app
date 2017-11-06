@@ -12,77 +12,88 @@
     You should have received a copy of the GNU General Public License
     along with Condor.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Condor.Views.ProjectPage">
-    <ContentPage.ToolbarItems>
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem x:Name="mnu_project_info" Order="Secondary" Text="Project Info" />
         <ToolbarItem x:Name="mnu_del_project" Order="Secondary" Text="Delete Project" />
         <ToolbarItem x:Name="mnu_add_member" Order="Secondary" Text="Add Member" />
         <ToolbarItem x:Name="mnu_create_task" Order="Secondary" Text="Create Task" />
-    </ContentPage.ToolbarItems>
-    <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Label x:Name="txt_project_description" />
-            <Label x:Name="lbl_members" FontSize="18" FontAttributes="Bold" Text="Members" Margin="20, 0, 0, 0"/>
-            <ListView x:Name="lay_members" HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Vertical" Padding="10" HorizontalOptions="FillAndExpand">
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                    <Label x:Name="txt_member_name" FontSize="14" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding ID}" HorizontalOptions="StartAndExpand" />
-                                    <Label x:Name="txt_member_assigned" FontSize="10" VerticalTextAlignment="Center" Text="{Binding NumAssignedTasks}" />
-                                    <Label Text=" tasks assigned" FontSize="10" VerticalTextAlignment="Center"/>
+    </TabbedPage.ToolbarItems>
+    <ContentPage Title="Members">
+        <ContentPage.Content>
+            <StackLayout>
+                <ListView x:Name="lay_members" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical" Padding="10" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                        <Label x:Name="txt_member_name" FontSize="14" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding ID}" HorizontalOptions="StartAndExpand" />
+                                        <Label x:Name="txt_member_assigned" FontSize="10" VerticalTextAlignment="Center" Text="{Binding NumAssignedTasks}" />
+                                        <Label Text=" tasks assigned" FontSize="10" VerticalTextAlignment="Center"/>
+                                    </StackLayout>
+                                    <Label x:Name="txt_member_role" FontSize="10" Text="{Binding Role.str}" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand" />
                                 </StackLayout>
-                                <Label x:Name="txt_member_role" FontSize="10" Text="{Binding Role.str}" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand" />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Label x:Name="lbl_my_tasks" FontSize="18" FontAttributes="Bold" Text="My Tasks" Margin="10, 0, 0, 0" />
-            <ListView x:Name="lay_my_tasks" HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="10">
-                                <StackLayout Orientation="Horizontal">
-                                    <StackLayout HorizontalOptions="FillAndExpand">
-                                        <Label x:Name="txt_task_name" Text="{Binding Name}" TextColor="Black" FontSize="14"/>
-                                        <Label x:Name="txt_task_due" Text="{Binding DueString}" FontSize="10"/>
-                                        <Label x:Name="txt_task_desc" Text="{Binding Description}" FontSize="10"/>
-                                    </StackLayout>
-                                    <StackLayout>
-                                        <Label x:Name="txt_task_status" Text="{Binding Status.str}" FontSize="10"/>
-                                    </StackLayout>
-                                </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Label x:Name="lbl_all_tasks" FontSize="18" FontAttributes="Bold" Text="Tasks" Margin="10, 0, 0, 0" />
-            <ListView x:Name="lay_all_tasks" HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="10">
-                                <StackLayout Orientation="Horizontal">
-                                    <StackLayout HorizontalOptions="FillAndExpand">
-                                        <Label x:Name="txt_task_name" Text="{Binding Name}" TextColor="Black" FontSize="14"/>
-                                        <Label x:Name="txt_task_due" Text="{Binding DueString}" FontSize="10"/>
-                                        <Label x:Name="txt_task_desc" Text="{Binding Description}" FontSize="10"/>
-                                    </StackLayout>
-                                    <StackLayout>
-                                        <Label x:Name="txt_task_assigned" Text="{Binding AssignedID}" FontSize="10"/>
-                                        <Label x:Name="txt_task_status" Text="{Binding Status.str}" FontSize="10"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="My Tasks">
+        <ContentPage.Content>
+            <StackLayout>
+                <ListView x:Name="lay_my_tasks" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout HorizontalOptions="FillAndExpand">
+                                            <Label x:Name="txt_task_name" Text="{Binding Name}" TextColor="Black" FontSize="14"/>
+                                            <Label x:Name="txt_task_due" Text="{Binding DueString}" FontSize="10"/>
+                                            <Label x:Name="txt_task_desc" Text="{Binding Description}" FontSize="10"/>
+                                        </StackLayout>
+                                        <StackLayout>
+                                            <Label x:Name="txt_task_status" Text="{Binding Status.str}" FontSize="10"/>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="All Tasks">
+        <ContentPage.Content>
+            <StackLayout>
+                <ListView x:Name="lay_all_tasks" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout HorizontalOptions="FillAndExpand">
+                                            <Label x:Name="txt_task_name" Text="{Binding Name}" TextColor="Black" FontSize="14"/>
+                                            <Label x:Name="txt_task_due" Text="{Binding DueString}" FontSize="10"/>
+                                            <Label x:Name="txt_task_desc" Text="{Binding Description}" FontSize="10"/>
+                                        </StackLayout>
+                                        <StackLayout>
+                                            <Label x:Name="txt_task_assigned" Text="{Binding AssignedID}" FontSize="10"/>
+                                            <Label x:Name="txt_task_status" Text="{Binding Status.str}" FontSize="10"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>

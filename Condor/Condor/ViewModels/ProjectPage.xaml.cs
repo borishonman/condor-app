@@ -36,17 +36,17 @@ using Condor.Models.API.CommandModels.Permission.Commands;
 namespace Condor.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ProjectPage : ContentPage
+	public partial class ProjectPage : TabbedPage
 	{
         private MasterDetailPage m_mdp;
 
         public Project m_proj;
         private Member m_me;
 
-        private Label m_txtDesc;
         private ListView m_lstMembers;
         private ListView m_lstMyTasks;
         private ListView m_lstAllTasks;
+        private ToolbarItem m_mnuProjectInfo;
         private ToolbarItem m_mnuDelProj;
         private ToolbarItem m_mnuAddMember;
         private ToolbarItem m_mnuCreateTask;
@@ -62,15 +62,16 @@ namespace Condor.Views
             m_mdp = mdp;
             m_proj = p;
 
-            m_txtDesc = this.FindByName<Label>("txt_project_description");
             m_lstMembers = this.FindByName<ListView>("lay_members");
             m_lstMyTasks = this.FindByName<ListView>("lay_my_tasks");
             m_lstAllTasks = this.FindByName<ListView>("lay_all_tasks");
-            m_mnuDelProj = this.ToolbarItems[0];
-            m_mnuAddMember = this.ToolbarItems[1];
-            m_mnuCreateTask = this.ToolbarItems[2];
+            m_mnuProjectInfo = this.ToolbarItems[0];
+            m_mnuDelProj = this.ToolbarItems[1];
+            m_mnuAddMember = this.ToolbarItems[2];
+            m_mnuCreateTask = this.ToolbarItems[3];
 
             //set the event handler for toolbar menu items clicked
+            m_mnuProjectInfo.Clicked += ToolbarClicked;
             m_mnuDelProj.Clicked += ToolbarClicked;
             m_mnuAddMember.Clicked += ToolbarClicked;
             m_mnuCreateTask.Clicked += ToolbarClicked;
@@ -86,6 +87,7 @@ namespace Condor.Views
 
             //empty the toolbar menu so we can re-add the things we can use later
             this.ToolbarItems.Clear();
+            this.ToolbarItems.Add(m_mnuProjectInfo);
 
             //check and save project-based permissions
             //only check task, we are checking member further down so just set the local var there
@@ -119,9 +121,6 @@ namespace Condor.Views
                 m_permManageMembers = (bool)response.GetValue("haspermission");
             });
             CondorAPI.getInstance().Execute(cmd);
-
-            //set the description
-            m_txtDesc.Text = p.Description;
 
             //get myself in the project
             m_me = p.GetMemberByName(my_username);
@@ -363,7 +362,14 @@ namespace Condor.Views
         {
             ToolbarItem tappedItem = sender as ToolbarItem;
 
-            if (tappedItem == m_mnuDelProj)
+            if (tappedItem == m_mnuProjectInfo)
+            {
+                ProjectInfoPage p = new ProjectInfoPage();
+                p.Description.Text = m_proj.Description;
+                p.Title = this.Title;
+                ((NavigationPage)m_mdp.Detail).PushAsync(p);
+            }
+            else if (tappedItem == m_mnuDelProj)
             {
                 Prompt p = new Prompt() { PromptTitle="Are you sure?",PositiveButtonText="Yes",NegativeButtonText="No" };
                 p.OnPromptSaved += new Prompt.PromptClosedEventListener(() =>
